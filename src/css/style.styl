@@ -1,0 +1,399 @@
+@charset "UTF-8"
+
+radius(radius)
+  -moz-border-radius: radius
+  -webkit-border-radius: radius
+  border-radius: radius
+
+vertical-gradient(startColor, endColor)
+  background: endColor
+  background: -moz-linear-gradient(startColor, endColor)
+  background: -webkit-gradient(linear, left top, left bottom, from(startColor), to(endColor))
+
+box-shadow()
+  -moz-box-shadow: arguments
+  -webkit-box-shadow: arguments
+  box-shadow: arguments
+
+transition()
+  -webkit-transition: arguments
+  -moz-transition: arguments
+  -o-transition: arguments
+  transition: arguments
+
+background-size()
+  -webkit-background-size: arguments
+  -moz-background-size: arguments
+  -o-background-size: arguments
+  background-size: arguments
+
+ellipsis()
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+// Colours
+input-border = #BFBFBF
+border-color = #E5E5E5
+dark-border = #383838
+text-color = #383838
+light-text= #e5e5e5
+orange = #F25824
+grey = #888
+light-background = #F7F7F7
+dark-background = #383838
+
+@font-face
+  font-family: 'entypo'
+  src: url('../font/entypo.eot') format('eot')
+  src: url('../font/entypo.eot?#iefix') format('embedded-opentype')
+  src: url('../font/entypo.woff') format('woff')
+  src: url('../font/entypo.ttf') format('truetype')
+  src: url('../font/entypo.svg') format('svg') active
+  font-weight: normal
+  font-style: normal
+
+.i
+  font-family: "entypo" !important
+  font-size: 24px
+  font-weight: 300 !important
+  //font-style: normal
+  //font-weight: normal
+  speak: none
+  display: inline-block
+  text-decoration: inherit
+  width: 1em
+  margin-right: 0.2em
+  text-align: center
+  opacity: 0.8
+  //Uncomment for 3D effect
+  //text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3)
+  //fix buttons height
+  //line-height: 1em
+  //you can be more comfortable with increased icons size
+  //font-size: 120%
+
+* 
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+body
+  color: text-color
+  margin: 0
+  font-family: "Open Sans", "PT Sans", Lato, "Lucida Grande", Helvetica, Verdana, Arial, sans-serif
+  font-size: 13px
+
+a
+  text-decoration: none
+  color: orange
+  &:hover
+    color: text-color
+
+table
+  border-collapse: collapse
+
+ul
+  padding: 0
+  margin: 0
+
+li
+  list-style-type: none
+  margin: 0
+
+h1, h2, h3, h4
+  margin: 0
+
+p
+  margin: 4px 0
+
+form
+  margin: 0
+
+input, textarea
+  font-family: Lato, Helvetica, sans-serif
+  font-size: 13px
+  color: #333
+  padding: 1px 5px
+  border: 1px solid input-border
+  radius(3px)
+  box-shadow(inset 0 1px 4px rgba(0, 0, 0, 0.2))
+
+a.button:link, a.button:visited, button, input[type='submit']
+  display: inline-block
+  border: 1px solid #ababab
+  color: #404040
+  margin: 0
+  padding: 4px 10px
+  font-size: 12px
+  text-align: center
+  vertical-gradient(#efefef, #d8d8d8)
+  radius(3px)
+  box-shadow 0 1px 2px rgba(0, 0, 0, .1), 0 1px 1px rgba(255, 255, 255, .8) inset
+  text-shadow: 0 1px 1px rgba(255, 255, 255, .5)
+  -webkit-font-smoothing: antialiased
+  outline: none
+
+a.button:hover, button:hover, input[type='submit']:hover
+  vertical-gradient(#f6f6f6, #e3e3e3)
+  cursor: pointer
+
+a.button:focus, button:focus, input[type='submit']:focus
+  border: 1px solid #80bfff
+  vertical-gradient(#f6f6f6, #e3e3e3)
+  box-shadow 0 0 3px #80bfff, 0 1px 1px rgba(255, 255, 255, .8) inset
+
+a.button:active, a.button.active, button:active, button.active, input[type='submit']:active, input[type='submit'].active
+  background: #e3e3e3
+  background: -moz-linear-gradient(top, #e3e3e3, #f6f6f6) #1b468f
+  background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#f6f6f6)) #1b468f
+  background: linear-gradient(top, #e3e3e3, #f6f6f6) #1b468f
+  box-shadow(none)
+
+a.button.disabled, button:disabled, input[type='submit']:disabled
+  background: #efefef !important
+  border: 1px solid #d1d1d1 !important
+  box-shadow(none !important)
+  color: #aaa !important
+  cursor: default
+  text-shadow: 0 1px 1px #fff !important
+
+button.primary
+  color: white
+  vertical-gradient(#dc5f59, #b33630)
+  box-shadow(none)
+
+button.primary:hover
+  vertical-gradient(lighten(#dc5f59, 3%), lighten(#b33630, 3%))
+  box-shadow(0 0 1px rgba(0,0,0,0.2))
+
+button.primary:active
+  vertical-gradient(#b33630, #dc5f59)
+  box-shadow(none)
+
+button.primary
+  background-color: #DF3F3F
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#DF3F3F), to(#A21A1A))
+  background-image: -webkit-linear-gradient(top, #DF3F3F, #A21A1A)
+  background-image: -moz-linear-gradient(top, #DF3F3F, #A21A1A)
+  background-image: -ms-linear-gradient(top, #DF3F3F, #A21A1A)
+  background-image: -o-linear-gradient(top, #DF3F3F, #A21A1A)
+  background-image: linear-gradient(to bottom, #DF3F3F, #A21A1A)
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(155, 155, 155, 0.4) inset
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(155, 155, 155, 0.4) inset
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(155, 155, 155, 0.4) inset
+
+.left
+  float: left
+  margin-right: 8px
+
+.right
+  float: right
+  margin-left: 8px
+
+.clear
+  clear: both
+
+.italic
+  font-style: italic
+
+.highlight
+  color: orange !important
+
+* html .clearfix
+  height: 1%
+  overflow: visible
+
+*+html .clearfix
+  min-height: 1%
+
+.clearfix:after
+  clear: both
+  content: "."
+  display: block
+  height: 0
+  visibility: hidden
+  font-size: 0
+
+// Grid
+
+
+
+// Layout
+.body
+  width: 900px
+  margin: 0 auto
+
+.header
+  margin: 12px 0
+  h1
+    float: left
+    font-weight: 400
+    font-family: Metrophobic
+    font-size: 25px
+    margin: 0 12px 0 0
+    a
+      color: text-color
+  span
+    margin-top: 11px
+
+.nav
+  margin: 8px 0 16px
+  ul
+    //display: inline-block
+    border: 1px solid border-color
+    vertical-gradient(white, #f2f2f2)
+    radius(4px)
+    li
+      float: left
+      min-width: 100px
+      a
+        display: block
+        font-weight: bold
+        padding: 10px 20px
+        color: text-color
+        text-align: center
+        border-right: 1px solid border-color
+        //box-shadow 1px 0 rgba(255, 255, 255, 0.75)
+      &:first-child a
+        radius(4px 0 0 4px)
+      &:last-child a
+        radius(0 4px 4px 0)
+    a.active
+      background: #f25824
+      color: white
+
+.section
+  margin: 24px 0
+  .header
+    border-bottom: 1px solid border-color
+    h2
+      float: left
+      margin: 0 12px 4px 0
+    p
+      margin-top: 6px
+
+.footer
+  border-top: 1px solid border-color
+  border-bottom: 1px solid border-color
+  margin-top: 64px
+  padding: 16px 0 120px
+  background: light-background
+  ul
+    vertical-align: top
+    display: inline-block
+    width: 160px
+    h4
+      margin: 4px 0
+    li
+      margin: 2px 0
+    a
+      color: text-color
+      &:hover
+        color: orange
+
+.pane
+  border: 1px solid border-color
+  margin-bottom: 8px
+  padding: 32px
+  background: light-background
+  radius(4px)
+
+// Element
+
+.searchbox
+  position: relative
+  width: 320px
+  margin-bottom: 16px
+  .search-icon
+    position: absolute
+    color: #888
+    top: 6px
+    left: 5px
+    font-size: 16px
+  .searchclear
+    //display: none
+    position: absolute
+    right: -5px
+    top: -4px
+    font-size: 27px
+    color: #b6b6b6
+    cursor: pointer
+    &:hover
+      color: #888
+  .search
+    width: 100%
+    padding: 3px 22px 
+    font-size: 13px
+    color: grey
+    border: 1px solid border-color
+    radius(13px)
+    box-shadow(0 1px 2px rgba(0,0,0,0.2) inset)
+    &:focus
+      outline: none
+      border-color: focus-color
+      box-shadow(0 1px 2px focus-color inset)
+
+.date
+  color: grey
+  margin-right: 8px
+
+.gallery
+  li
+    display: inline-block
+    width: 180px
+    text-align: center
+    padding: 8px
+    vertical-align: top
+    border: 1px solid transparent
+    radius(4px)
+    &:last-child
+      margin-right: 0
+    img
+      max-width: 166px
+      height: 80px
+    &:hover
+      border: 1px solid border-color
+      cursor: pointer
+      background: light-background
+
+.largelist
+  li
+    border-top: 1px solid border-color
+    padding: 8px 0
+    > a img
+      height: 80px
+      width: 80px
+      margin-right: 8px
+    > div
+      display: inline-block
+      vertical-align: top
+      border: 4px solid white
+
+
+// Specific
+.banner
+  position: relative
+  img
+    border: 4px solid white
+    box-shadow 0 0 3px rgba(0, 0, 0, 0.3)
+    radius(4px)
+  img.full
+    width: 100%
+  img.half
+    width: 50%
+  img.quarter
+    width: 25%
+  .message
+    position: absolute
+    bottom: 12px
+    left: 8px
+    //margin-left: -150px
+    //left: 50%
+    padding: 8px 16px
+    color: white
+    background: rgba(0, 0, 0, 0.65)
+    border: 1px solid dark-border
+    radius(4px)
+    box-shadow 0 1px 6px rgba(0, 0, 0, 0.3)
+
