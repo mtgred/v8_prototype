@@ -55,7 +55,6 @@ dark-background = #383838
 
 .i
   font-family: "entypo" !important
-  font-size: 24px
   font-weight: 300 !important
   //font-style: normal
   //font-weight: normal
@@ -224,7 +223,7 @@ button.primary
   width: 900px
   margin: 0 auto
 
-.header
+.topheader
   margin: 12px 0
   h1
     float: left
@@ -234,8 +233,13 @@ button.primary
     margin: 0 12px 0 0
     a
       color: text-color
-  span
+  .tagline
     margin-top: 11px
+  ul
+    li
+      float: left
+      margin-top: 9px
+      margin-left: 16px
 
 .nav
   margin: 8px 0 16px
@@ -264,14 +268,15 @@ button.primary
       color: white
 
 .section
-  margin: 24px 0
+  margin: 16px 0
   .header
+    padding-bottom: 4px
     border-bottom: 1px solid border-color
     h2
       float: left
-      margin: 0 12px 4px 0
-    p
-      margin-top: 6px
+      margin: 0 12px 0 0
+    span
+      margin-top: 7px
 
 .footer
   border-top: 1px solid border-color

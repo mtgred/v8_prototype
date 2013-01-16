@@ -11,7 +11,6 @@
 }
 .i {
   font-family: "entypo" !important;
-  font-size: 24px;
   font-weight: 300 !important;
   speak: none;
   display: inline-block;
@@ -220,21 +219,26 @@ button.primary {
   width: 900px;
   margin: 0 auto;
 }
-.header {
+.topheader {
   margin: 12px 0;
 }
-.header h1 {
+.topheader h1 {
   float: left;
   font-weight: 400;
   font-family: Metrophobic;
   font-size: 25px;
   margin: 0 12px 0 0;
 }
-.header h1 a {
+.topheader h1 a {
   color: #383838;
 }
-.header span {
+.topheader .tagline {
   margin-top: 11px;
+}
+.topheader ul li {
+  float: left;
+  margin-top: 9px;
+  margin-left: 16px;
 }
 .nav {
   margin: 8px 0 16px;
@@ -275,17 +279,18 @@ button.primary {
   color: #fff;
 }
 .section {
-  margin: 24px 0;
+  margin: 16px 0;
 }
 .section .header {
+  padding-bottom: 4px;
   border-bottom: 1px solid #e5e5e5;
 }
 .section .header h2 {
   float: left;
-  margin: 0 12px 4px 0;
+  margin: 0 12px 0 0;
 }
-.section .header p {
-  margin-top: 6px;
+.section .header span {
+  margin-top: 7px;
 }
 .footer {
   border-top: 1px solid #e5e5e5;
