@@ -4,41 +4,38 @@ html
     meta(charset="utf-8")
     title OpenERP
     link(rel='stylesheet', href='/css/style.css')
-    link(href='http://fonts.googleapis.com/css?family=Lato:400,700|Metrophobic',rel='stylesheet',type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700',rel='stylesheet',type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700',rel='stylesheet',type='text/css')
   body
-    div.body
-      div.topheader.clearfix
-        h1
+    div.topheader
+      div.container.clearfix
+        h2
           a(href="/") OpenERP
-        span.tagline.left Open Source Business Applications
-        ul.right
-          li
-            span.i &#9993;
-            a(href="mailto:info@openerp.com") info@openerp.com
-          li
-            span.i &#128222;
-            | +32 2 290 34 90
+        div.right
+          ul.contact.clearfix
+            li
+              span.i &#128222;
+              | +32 2 290 34 90
+            li
+              span.i &#9993;
+              a(href="mailto:info@openerp.com") info@openerp.com
 
-      div.nav
-        ul.clearfix
-          li
-            a.active(href="/") Home
-          li
-            a(href="") Pricing
-          li
-            a(href="") Ressources
-          li
-            a(href="") Store
-          li
-            a(href="") Contact Us
+          div.nav.right
+            ul
+              li
+                a.active(href="/") Home
+              li
+                a(href="") Pricing
+              li
+                a(href="") Ressources
+              li
+                a(href="") Store
+              li
+                a(href="") Contact Us
 
-
-      block body
+    block body
 
     div.footer
-      div.body
+      div.container
         ul.clearfix
           li
             h4 OpenERP
@@ -85,7 +82,6 @@ html
             a(href="/jobs") Investor Relations
           li
             a(href="/jobs") Contact Us
-
 
     script(type='text/javascript', src='/js/jquery-1.7.1.min.js')
     //script(type='text/javascript', src='/js/client.js')

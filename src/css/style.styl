@@ -18,6 +18,7 @@ box-shadow()
 transition()
   -webkit-transition: arguments
   -moz-transition: arguments
+  -ms-transition: all 0.2s ease-out;
   -o-transition: arguments
   transition: arguments
 
@@ -33,7 +34,6 @@ ellipsis()
   overflow: hidden
 
 // Colours
-input-border = #BFBFBF
 border-color = #E5E5E5
 dark-border = #383838
 text-color = #383838
@@ -80,12 +80,13 @@ dark-background = #383838
 body
   color: text-color
   margin: 0
-  font-family: "Open Sans", "PT Sans", Lato, "Lucida Grande", Helvetica, Verdana, Arial, sans-serif
+  font-family: "Open Sans", "Lucida Grande", Helvetica, Arial, sans-serif
   font-size: 13px
 
 a
   text-decoration: none
   color: orange
+  transition(all 0.2s ease-out)
   &:hover
     color: text-color
 
@@ -110,13 +111,13 @@ form
   margin: 0
 
 input, textarea
-  font-family: Lato, Helvetica, sans-serif
+  font-family: "Open Sans", "Lucida Grande", Helvetica, Arial, sans-serif
+  color: text-color
   font-size: 13px
-  color: #333
-  padding: 1px 5px
-  border: 1px solid input-border
+  padding: 2px 8px
+  border: 1px solid border-color
+  background: light-background
   radius(3px)
-  box-shadow(inset 0 1px 4px rgba(0, 0, 0, 0.2))
 
 a.button:link, a.button:visited, button, input[type='submit']
   display: inline-block
@@ -219,71 +220,71 @@ button.primary
 
 
 // Layout
-.body
+.container
   width: 900px
   margin: 0 auto
 
 .topheader
-  margin: 12px 0
-  h1
+  padding: 8px 0
+  box-shadow(0 1px 8px rgba(0, 0, 0, 0.2))
+  border-bottom: 1px solid border-color
+  margin-
+  h2
     float: left
-    font-weight: 400
-    font-family: Metrophobic
-    font-size: 25px
-    margin: 0 12px 0 0
+    font-size: 28px
+    line-height: 40px
     a
       color: text-color
-  .tagline
-    margin-top: 11px
-  ul
+    .tagline
+      font-size: 13px
+
+  .nav
+    margin-top: 8px
+    ul
+      li
+        float: left
+        margin-left: 24px
+        a
+          display: block
+          font-weight: bold
+          font-size: 16px
+          color: text-color
+          text-align: center
+          &:hover
+            color: orange
+        .active
+          color: orange
+
+  .contact
     li
-      float: left
-      margin-top: 9px
+      float: right
       margin-left: 16px
 
-.nav
-  margin: 8px 0 16px
-  ul
-    //display: inline-block
-    border: 1px solid border-color
-    vertical-gradient(white, #f2f2f2)
-    radius(4px)
-    li
-      float: left
-      min-width: 100px
-      a
-        display: block
-        font-weight: bold
-        padding: 10px 20px
-        color: text-color
-        text-align: center
-        border-right: 1px solid border-color
-        //box-shadow 1px 0 rgba(255, 255, 255, 0.75)
-      &:first-child a
-        radius(4px 0 0 4px)
-      &:last-child a
-        radius(0 4px 4px 0)
-    a.active
-      background: #f25824
-      color: white
+h1
+  margin: 16px 0
+  padding-bottom: 8px
+  border-bottom: 1px solid border-color
+  font-weight: normal
 
 .section
   margin: 16px 0
-  .header
+  h2
     padding-bottom: 4px
     border-bottom: 1px solid border-color
-    h2
-      float: left
-      margin: 0 12px 0 0
-    span
-      margin-top: 7px
+    margin-bottom: 12px
+    font-weight: normal
+    a
+      font-size: 13px
+      margin-left: 16px
+      font-weight: normal
 
 .footer
   border-top: 1px solid border-color
   border-bottom: 1px solid border-color
-  margin-top: 64px
-  padding: 16px 0 120px
+  padding: 16px 0
   background: light-background
+  height: 300px
+  margin-top: 64px
   ul
     vertical-align: top
     display: inline-block
@@ -299,8 +300,8 @@ button.primary
 
 .pane
   border: 1px solid border-color
-  margin-bottom: 8px
-  padding: 32px
+  margin: 16px 0
+  padding: 24px
   background: light-background
   radius(4px)
 
@@ -312,8 +313,8 @@ button.primary
   margin-bottom: 16px
   .search-icon
     position: absolute
-    color: #888
-    top: 6px
+    color: grey
+    top: 7px
     left: 5px
     font-size: 16px
   .searchclear
@@ -325,19 +326,36 @@ button.primary
     color: #b6b6b6
     cursor: pointer
     &:hover
-      color: #888
+      color: grey
   .search
     width: 100%
     padding: 3px 22px 
     font-size: 13px
-    color: grey
-    border: 1px solid border-color
     radius(13px)
-    box-shadow(0 1px 2px rgba(0,0,0,0.2) inset)
     &:focus
       outline: none
       border-color: focus-color
       box-shadow(0 1px 2px focus-color inset)
+
+.sidebar
+  width: 180px
+  float: left
+  h4
+    margin-bottom: 4px
+  ul
+    margin-bottom: 8px
+    li
+      margin: 0 0 4px 12px
+    a
+      color: text-color
+      &:hover
+        color: orange
+
+.content
+  float: left
+  width: 720px
+  padding-left: 16px
+  border-left: 1px dotted border-color
 
 .date
   color: grey
@@ -352,6 +370,7 @@ button.primary
     vertical-align: top
     border: 1px solid transparent
     radius(4px)
+    transition(all 0.2s ease)
     &:last-child
       margin-right: 0
     img
@@ -376,9 +395,8 @@ button.primary
       border: 4px solid white
 
 
-// Specific
-.banner
-  position: relative
+
+.cadre
   img
     border: 4px solid white
     box-shadow 0 0 3px rgba(0, 0, 0, 0.3)
@@ -389,15 +407,25 @@ button.primary
     width: 50%
   img.quarter
     width: 25%
+
+
+// Specific
+.banner
+  background: url(../img/banner.jpg) top center no-repeat
+  background-size: cover
+  height: 320px
+  .container
+    position: relative
+    height: 100%
   .message
     position: absolute
-    bottom: 12px
     left: 8px
-    //margin-left: -150px
-    //left: 50%
+    bottom: 8px
+    vertical-align: bottom
+    display: inline-block
     padding: 8px 16px
     color: white
-    background: rgba(0, 0, 0, 0.65)
+    background: rgba(0, 0, 0, 0.6)
     border: 1px solid dark-border
     radius(4px)
     box-shadow 0 1px 6px rgba(0, 0, 0, 0.3)
