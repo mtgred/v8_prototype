@@ -2,84 +2,81 @@ extends layout
 
 block body
   div.container.clearfix
-    h1 Events
+    div.row
+      div.span2
+        ul.nav.nav-list
+          li.nav-header Date
+          li
+            a(href="") All
+          li
+            a(href="") This Week
+          li
+            a(href="") Next Week
+          li
+            a(href="") This Month
+          li.nav-header Price
+          li
+            a(href="") All
+          li
+            a(href="") Free
+          li
+            a(href="") $$$
+      div.span10
+        h1 Events
 
-    div.sidebar
-      h4 Date
-      ul
-        li
-          a(href="") All
-        li
-          a(href="") This Week
-        li
-          a(href="") Next Week
-        li
-          a(href="") This Month
+        div.clearfix
+          div.left
+            | Sort by: 
+            select
+              option(value="date") Date
+              option(value="location") Location
+              option(value="organizer") Organizer
+              option(value="name") Name
+          div.searchbox.right
+            span.i.search-icon &#128269;
+            input.search(placeholder="Search...") 
+            span.oe_e.searchclear
 
-      h4 Price
-      ul
-        li
-          a(href="") All
-        li
-          a(href="") Free
-        li
-          a(href="") $$$
-
-    div.content
-
-      div.clearfix
-        div.left
-          | Sort by: 
-          select
-            option(value="date") Date
-            option(value="location") Location
-            option(value="organizer") Organizer
-            option(value="name") Name
-        div.searchbox.right
-          span.i.search-icon &#128269;
-          input.search(placeholder="Search...") 
-          span.oe_e.searchclear
-
-      ul.largelist
-        li
-          a(href="")
-            img(src="/img/pcsol.jpg")
-          div
-            h4 
-              a(href="") Presentation d'OpenERP v7
-            div 15/01/2012
-            div Oupeye, Belgium
-        li
-          a(href="")
-            img(src="/img/be.png")
-          div
-            h4
-              a(href="") OpenERP v7 Technical Training
-            div 21/01/2012
-            div Grand-Rosiere, Belgium
-        li
-          a(href="")
-            img(src="/img/es.png")
-          div
-            h4 
-              a(href="") Avanzosc curso funcional OpenERP
-            div 22/01/2012
-            div Azkoitia, España
-        li
-          a(href="")
-            img(src="/img/official.png")
-          div
-            h4
-              a(href="") Presentation Officielle d'OpenERP v7
-            div 31/01/2012
-            div Brussels, Belgium
-        li
-          a(href="")
-            img(src="/img/it.jpg")
-          div
-            h4
-              a(href="") Formazione Funzionale su OpenERP V6.1
-            div 11/02/2012
-            div Torino, Italia
+        ul.largelist
+          li
+            a(href="")
+              img(src="/img/pcsol.jpg")
+            div
+              h4 
+                a(href="") Presentation d'OpenERP v7
+              div 15/01/2012
+              div Oupeye, Belgium
+          li
+            a(href="")
+              img(src="/img/be.png")
+            div
+              h4
+                a(href="") OpenERP v7 Technical Training
+              div 21/01/2012
+              div Grand-Rosiere, Belgium
+          li
+            a(href="")
+              img(src="/img/es.png")
+            div
+              h4 
+                a(href="") Avanzosc curso funcional OpenERP
+              div 22/01/2012
+              div Azkoitia, España
+          li
+            a(href="")
+              img(src="/img/official.png")
+            div
+              h4
+                a(href="") Presentation Officielle d'OpenERP v7
+              div 31/01/2012
+              div Brussels, Belgium
+          li
+            a(href="")
+              img(src="/img/it.jpg")
+            div
+              h4
+                a(href="") Formazione Funzionale su OpenERP V6.1
+              div 11/02/2012
+              div Torino, Italia
 
 

@@ -82,6 +82,7 @@ body
   margin: 0
   font-family: "Open Sans", "Lucida Grande", Helvetica, Arial, sans-serif
   font-size: 13px
+  line-height: 18px
 
 a
   text-decoration: none
@@ -89,23 +90,35 @@ a
   transition(all 0.2s ease-out)
   &:hover
     color: text-color
+    text-decoration: none
 
 table
   border-collapse: collapse
 
-ul
-  padding: 0
-  margin: 0
-
-li
-  list-style-type: none
-  margin: 0
-
 h1, h2, h3, h4
-  margin: 0
+  line-height: normal
+
+h1
+  font-size: 24px
+  margin: 12px 0
+
+h2
+  font-size: 20px
+  margin: 8px 0
+
+h3
+  font-size: 16px
+  margin: 6px 0
+
+h4
+  font-size: 14px
+  margin: 6px 0
+
+ul
+  margin-bottom: 16px
 
 p
-  margin: 4px 0
+  margin: 8px 0
 
 form
   margin: 0
@@ -183,13 +196,13 @@ button.primary
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(155, 155, 155, 0.4) inset
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(155, 155, 155, 0.4) inset
 
-.left
-  float: left
-  margin-right: 8px
+.affix
+  top: 0
 
-.right
-  float: right
-  margin-left: 8px
+@media (max-width: 767px)
+  .affix
+    position: static
+    width: auto
 
 .clear
   clear: both
@@ -215,56 +228,38 @@ button.primary
   visibility: hidden
   font-size: 0
 
+ul.bullet-list
+  li
+
+
 // Grid
 
 
 
 // Layout
-.container
-  width: 900px
-  margin: 0 auto
 
 .topheader
-  padding: 8px 0
+  padding: 4px 0
   box-shadow(0 1px 8px rgba(0, 0, 0, 0.2))
   border-bottom: 1px solid border-color
-  margin-
-  h2
-    float: left
-    font-size: 28px
-    line-height: 40px
-    a
-      color: text-color
-    .tagline
-      font-size: 13px
 
-  .nav
-    margin-top: 8px
-    ul
-      li
-        float: left
-        margin-left: 24px
-        a
-          display: block
-          font-weight: bold
-          font-size: 16px
-          color: text-color
-          text-align: center
-          &:hover
-            color: orange
-        .active
-          color: orange
-
-  .contact
-    li
-      float: right
-      margin-left: 16px
+.contact
+  margin: 0
+  li
+    list-style-type: none
+    margin: 0
+    float: right
+    padding: 8px 12px 0
+    //margin-left: 16px
 
 h1
   margin: 16px 0
   padding-bottom: 8px
   border-bottom: 1px solid border-color
   font-weight: normal
+
+section
+  padding-top: 32px
 
 .section
   margin: 16px 0
@@ -281,29 +276,34 @@ h1
 .footer
   border-top: 1px solid border-color
   border-bottom: 1px solid border-color
-  padding: 16px 0
+  padding: 16px 0 120px
   background: light-background
-  height: 300px
   margin-top: 64px
   ul
     vertical-align: top
     display: inline-block
-    width: 160px
     h4
       margin: 4px 0
     li
+      list-style-type: none
       margin: 2px 0
     a
       color: text-color
       &:hover
         color: orange
 
+.nav-list
+  margin: 24px 0
+
 .pane
   border: 1px solid border-color
-  margin: 16px 0
-  padding: 24px
+  margin: 24px 0
+  padding: 32px
   background: light-background
   radius(4px)
+  h2
+    font-size: 28px
+    margin: 0
 
 // Element
 
@@ -364,7 +364,7 @@ h1
 .gallery
   li
     display: inline-block
-    width: 180px
+    width: 20%
     text-align: center
     padding: 8px
     vertical-align: top
@@ -382,7 +382,10 @@ h1
       background: light-background
 
 .largelist
+  margin: 0
   li
+    list-style-type: none
+    margin: 0
     border-top: 1px solid border-color
     padding: 8px 0
     > a img
@@ -394,20 +397,11 @@ h1
       vertical-align: top
       border: 4px solid white
 
-
-
 .cadre
   img
     border: 4px solid white
     box-shadow 0 0 3px rgba(0, 0, 0, 0.3)
     radius(4px)
-  img.full
-    width: 100%
-  img.half
-    width: 50%
-  img.quarter
-    width: 25%
-
 
 // Specific
 .banner
@@ -419,7 +413,6 @@ h1
     height: 100%
   .message
     position: absolute
-    left: 8px
     bottom: 8px
     vertical-align: bottom
     display: inline-block
@@ -429,4 +422,3 @@ h1
     border: 1px solid dark-border
     radius(4px)
     box-shadow 0 1px 6px rgba(0, 0, 0, 0.3)
-
