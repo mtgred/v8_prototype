@@ -57,6 +57,8 @@ h4 {
 h1 {
   font-size: 24px;
   margin: 12px 0;
+  padding-bottom: 8px;
+  font-weight: normal;
 }
 h2 {
   font-size: 20px;
@@ -68,7 +70,7 @@ h3 {
 }
 h4 {
   font-size: 14px;
-  margin: 6px 0;
+  margin: 0 0 4px;
 }
 ul {
   margin-bottom: 16px;
@@ -84,12 +86,17 @@ textarea {
   font-family: "Open Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #383838;
   font-size: 13px;
-  padding: 2px 8px;
   border: 1px solid #e5e5e5;
   background: #f7f7f7;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+}
+select {
+  height: 20px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+label {
+  display: inline-block;
+  margin-right: 8px;
 }
 a.button:link,
 a.button:visited,
@@ -200,13 +207,12 @@ button.primary {
   box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(155,155,155,0.4) inset;
 }
 .affix {
-  top: 0;
+  top: -16px;
 }
 @media (max-width: 767px) {
   .affix {
     position: static;
     width: auto;
-    top: 0;
   }
 }
 .clear {
@@ -234,11 +240,34 @@ button.primary {
   font-size: 0;
 }
 .topheader {
-  padding: 4px 0;
   -moz-box-shadow: 0 1px 8px rgba(0,0,0,0.2);
   -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.2);
   box-shadow: 0 1px 8px rgba(0,0,0,0.2);
   border-bottom: 1px solid #e5e5e5;
+}
+.topheader .navbar {
+  margin: 4px 0 0 0;
+}
+.topheader .navbar .nav {
+  float: none;
+}
+.topheader .navbar .nav > li {
+  float: right;
+}
+.topheader .navbar .nav > li a {
+  padding: 4px 8px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+.topheader .navbar .nav > li a:hover {
+  color: #f25824;
+}
+.topheader .navbar .nav > li .active {
+  color: #f25824;
+  border-color: #e5e5e5;
+  background: #f7f7f7;
 }
 .contact {
   margin: 0;
@@ -247,16 +276,10 @@ button.primary {
   list-style-type: none;
   margin: 0;
   float: right;
-  padding: 8px 12px 0;
-}
-h1 {
-  margin: 16px 0;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #e5e5e5;
-  font-weight: normal;
+  padding: 4px 8px;
 }
 section {
-  padding-top: 32px;
+  padding: 8px;
 }
 .section {
   margin: 16px 0;
@@ -297,7 +320,7 @@ section {
   color: #f25824;
 }
 .nav-list {
-  margin: 24px 0;
+  margin: 12px 0;
 }
 .pane {
   border: 1px solid #e5e5e5;
@@ -312,6 +335,9 @@ section {
   font-size: 28px;
   margin: 0;
 }
+.dropdown li a:hover {
+  background: #f7f7f7;
+}
 .searchbox {
   position: relative;
   width: 320px;
@@ -320,7 +346,7 @@ section {
 .searchbox .search-icon {
   position: absolute;
   color: #888;
-  top: 7px;
+  top: 11px;
   left: 5px;
   font-size: 16px;
 }
@@ -337,7 +363,7 @@ section {
 }
 .searchbox .search {
   width: 100%;
-  padding: 3px 22px;
+  padding: 2px 22px;
   font-size: 13px;
   -moz-border-radius: 13px;
   -webkit-border-radius: 13px;
@@ -364,6 +390,7 @@ section {
   margin: 0 0 4px 12px;
 }
 .sidebar ul a {
+  display: inline-block;
   color: #383838;
 }
 .sidebar ul a:hover {
@@ -379,9 +406,7 @@ section {
   color: #888;
   margin-right: 8px;
 }
-.gallery li {
-  display: inline-block;
-  width: 20%;
+.gallery > div {
   text-align: center;
   padding: 8px;
   vertical-align: top;
@@ -395,14 +420,14 @@ section {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.gallery li:last-child {
+.gallery > div:last-child {
   margin-right: 0;
 }
-.gallery li img {
+.gallery > div img {
   max-width: 166px;
   height: 80px;
 }
-.gallery li:hover {
+.gallery > div:hover {
   border: 1px solid #e5e5e5;
   cursor: pointer;
   background: #f7f7f7;
@@ -424,7 +449,9 @@ section {
 .largelist li > div {
   display: inline-block;
   vertical-align: top;
-  border: 4px solid #fff;
+}
+.thicklist li {
+  list-style-type: none;
 }
 .cadre img {
   border: 4px solid #fff;
@@ -434,6 +461,23 @@ section {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+}
+.listview {
+  width: 100%;
+}
+.listview thead {
+  border-bottom: 1px solid #e5e5e5;
+}
+.listview td,
+.listview th {
+  text-align: left;
+}
+.listview td:first-child,
+.listview th:first-child {
+  padding: 8px;
+  width: 28px;
+  text-align: center;
+  vertical-align: middle;
 }
 .banner {
   background: url("../img/banner.jpg") top center no-repeat;

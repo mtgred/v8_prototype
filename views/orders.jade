@@ -1,0 +1,57 @@
+extends layout
+
+block body
+  div.container.clearfix
+    div.row
+      div.span2
+        ul.nav.nav-list
+          li
+            a.active(href="") All (127)
+          li.nav-header Status
+          li
+            a(href="") Draft (47)
+          li
+            a(href="") To invoice (7)
+          li
+            a(href="") Done (73)
+          li.nav-header Amount
+          li
+            a(href="") > 50000 &euro; (6)
+          li
+            a(href="") 10000 - 50000 &euro; (49)
+          li
+            a(href="") 1000 - 9999 &euro; (52)
+          li
+            a(href="") < 1000 &euro; (20)
+          li.nav-header Custom Filters
+          li
+            a(href="") Saleman: Ruben (19)
+          li
+            a(href="") Client: McKinsey (3)
+      div.span10
+        h1
+          | Sale Orders
+          div.searchbox.pull-right
+            span.i.search-icon &#128269;
+            input.search(placeholder="Search...") 
+            span.oe_e.searchclear
+
+        table.listview
+          thead
+            tr
+              th
+                input(type="checkbox")
+              th Id
+              th Date
+              th Customer
+              th Saleman
+              th Status
+              th Amount
+
+          tbody
+            tr
+              td
+                input(type="checkbox")
+              td Agrolait
+              td 15/01/2012
+              td Adress

@@ -25,14 +25,14 @@ block body
         h1 Events
 
         div.clearfix
-          div.left
-            | Sort by: 
+          div.pull-left
+            label Sort by: 
             select
               option(value="date") Date
               option(value="location") Location
               option(value="organizer") Organizer
               option(value="name") Name
-          div.searchbox.right
+          div.searchbox.pull-right
             span.i.search-icon &#128269;
             input.search(placeholder="Search...") 
             span.oe_e.searchclear

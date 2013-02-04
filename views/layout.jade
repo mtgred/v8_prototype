@@ -10,35 +10,57 @@ html
   body
     div.topheader
       div.container
-        div.navbar
+        div.navbar.clearfix
           a.brand(href="/")
             img(src="/img/logo.png")
           div.pull-right
-            ul.contact.clearfix
+            ul.nav.clearfix
+              li.dropdown
+                a.dropdown-toggle(href="", data-toggle="dropdown")
+                  | Login
+                  b.caret
+                ul.dropdown-menu.pull-right
+                  li
+                    a(href="/orders") My Orders
+                  li
+                    a(href="") Settings
+                  li
+                    a(href="") Logout
+              li.dropdown
+                a.dropdown-toggle(href="")
+                  span.i &#59197;
+                  | 0
+                  b.caret
+                ul.dropdown-menu
+                  li
               li
-                span.i &#128222;
-                | +32 2 290 34 90
+                a(href="")
+                  span.i &#128222;
+                  | +32 2 290 34 90
               li
-                span.i &#9993;
-                | info@openerp.com
-            ul.nav.pull-right
+                a(href="mailto:info@openerp.com")
+                  span.i &#9993;
+                  | info@openerp.com
+            ul.nav
               li
-                a.active(href="/") Home
+                a(href="") About Us
               li
-                a(href="") Pricing
+                a(href="/shop") Shop
+              li
+                a(href="/shop") Blog
               li
                 a(href="") Ressources
               li
-                a(href="") Store
+                a(href="") Pricing
               li
-                a(href="") Contact Us
+                a.active(href="/") Home
 
     block body
 
     div.footer
       div.container
         div.row
-          ul.span2.offset3
+          ul.span2
             li
               h4 OpenERP
             li
@@ -83,7 +105,10 @@ html
             li
               a(href="/jobs") Investor Relations
             li
+              a(href="/team") Our Team
+            li
               a(href="/jobs") Contact Us
 
     script(type='text/javascript', src='/js/jquery-1.7.1.min.js')
     script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/client.js')
