@@ -2,6 +2,7 @@ express = require('express')
 app = express()
 server = require('http').createServer(app)
 stylus = require('stylus')
+db = require('mongoskin').db('localhost:27017/openerp')
 
 # Express
 app.configure ->

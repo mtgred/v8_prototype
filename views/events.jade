@@ -22,7 +22,12 @@ block body
           li
             a(href="") $$$
       div.span10
-        h1 Events
+        div.clearfix
+          h1.pull-left Events
+          div.navbar-search.pull-right
+            span.i.search-icon &#128269;
+            input.search-query(type="search", placeholder="Search...") 
+            span.oe_e.searchclear
 
         div.clearfix
           div.pull-left
@@ -32,10 +37,6 @@ block body
               option(value="location") Location
               option(value="organizer") Organizer
               option(value="name") Name
-          div.searchbox.pull-right
-            span.i.search-icon &#128269;
-            input.search(placeholder="Search...") 
-            span.oe_e.searchclear
 
         ul.largelist
           li

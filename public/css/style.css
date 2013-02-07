@@ -16,7 +16,7 @@
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: 0.2em;
+  margin-right: 0.3em;
   text-align: center;
   opacity: 0.8;
 }
@@ -56,8 +56,6 @@ h4 {
 }
 h1 {
   font-size: 24px;
-  margin: 12px 0;
-  padding-bottom: 8px;
   font-weight: normal;
 }
 h2 {
@@ -86,7 +84,7 @@ textarea {
   font-family: "Open Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #383838;
   font-size: 13px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #ddd;
   background: #f7f7f7;
 }
 select {
@@ -107,7 +105,7 @@ input[type='submit'] {
   color: #404040;
   margin: 0;
   padding: 4px 10px;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
   background: #d8d8d8;
   background: -moz-linear-gradient(#efefef, #d8d8d8);
@@ -121,6 +119,7 @@ input[type='submit'] {
   text-shadow: 0 1px 1px rgba(255,255,255,0.5);
   -webkit-font-smoothing: antialiased;
   outline: none;
+  line-height: normal;
 }
 a.button:hover,
 button:hover,
@@ -206,6 +205,14 @@ button.primary {
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(155,155,155,0.4) inset;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(155,155,155,0.4) inset;
 }
+.avatar {
+  width: 24px;
+  height: 24px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin: 0 4px;
+}
 .affix {
   top: -16px;
 }
@@ -240,16 +247,17 @@ button.primary {
   font-size: 0;
 }
 .topheader {
-  -moz-box-shadow: 0 1px 8px rgba(0,0,0,0.2);
-  -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.2);
-  box-shadow: 0 1px 8px rgba(0,0,0,0.2);
-  border-bottom: 1px solid #e5e5e5;
+  -moz-box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-bottom: 1px solid #ddd;
 }
 .topheader .navbar {
   margin: 4px 0 0 0;
 }
 .topheader .navbar .nav {
   float: none;
+  margin-right: 0;
 }
 .topheader .navbar .nav > li {
   float: right;
@@ -266,8 +274,12 @@ button.primary {
 }
 .topheader .navbar .nav > li .active {
   color: #f25824;
-  border-color: #e5e5e5;
+  border-color: #ddd;
   background: #f7f7f7;
+}
+.topheader .navbar .nav .avatar {
+  float: left;
+  margin-top: -2px;
 }
 .contact {
   margin: 0;
@@ -286,7 +298,7 @@ section {
 }
 .section h2 {
   padding-bottom: 4px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ddd;
   margin-bottom: 12px;
   font-weight: normal;
 }
@@ -296,8 +308,8 @@ section {
   font-weight: normal;
 }
 .footer {
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding: 16px 0 120px;
   background: #f7f7f7;
   margin-top: 64px;
@@ -322,8 +334,13 @@ section {
 .nav-list {
   margin: 12px 0;
 }
+.nav-list > li > a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
 .pane {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #ddd;
   margin: 24px 0;
   padding: 32px;
   background: #f7f7f7;
@@ -338,43 +355,34 @@ section {
 .dropdown li a:hover {
   background: #f7f7f7;
 }
-.searchbox {
-  position: relative;
-  width: 320px;
-  margin-bottom: 16px;
+.navbar-search {
+  margin-top: 16px;
 }
-.searchbox .search-icon {
+.navbar-search .search-query {
+  padding: 2px 22px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+  background: #f7f7f7;
+  border-color: #ddd;
+}
+.navbar-search .search-icon {
   position: absolute;
   color: #888;
-  top: 11px;
+  top: 3px;
   left: 5px;
   font-size: 16px;
 }
-.searchbox .searchclear {
+.navbar-search .searchclear {
   position: absolute;
   right: -5px;
-  top: -4px;
+  top: -5px;
   font-size: 27px;
   color: #b6b6b6;
   cursor: pointer;
 }
-.searchbox .searchclear:hover {
+.navbar-search .searchclear:hover {
   color: #888;
-}
-.searchbox .search {
-  width: 100%;
-  padding: 2px 22px;
-  font-size: 13px;
-  -moz-border-radius: 13px;
-  -webkit-border-radius: 13px;
-  border-radius: 13px;
-}
-.searchbox .search:focus {
-  outline: none;
-  border-color: focus-color;
-  -moz-box-shadow: 0 1px 2px focus-color inset;
-  -webkit-box-shadow: 0 1px 2px focus-color inset;
-  box-shadow: 0 1px 2px focus-color inset;
 }
 .sidebar {
   width: 180px;
@@ -400,7 +408,7 @@ section {
   float: left;
   width: 720px;
   padding-left: 16px;
-  border-left: 1px dotted #e5e5e5;
+  border-left: 1px dotted #ddd;
 }
 .date {
   color: #888;
@@ -428,7 +436,7 @@ section {
   height: 80px;
 }
 .gallery > div:hover {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #ddd;
   cursor: pointer;
   background: #f7f7f7;
 }
@@ -438,7 +446,7 @@ section {
 .largelist li {
   list-style-type: none;
   margin: 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #ddd;
   padding: 8px 0;
 }
 .largelist li > a img {
@@ -462,22 +470,108 @@ section {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
+.button-group {
+  border: 1px solid #ddd;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin: 0;
+}
+.button-group li {
+  float: left;
+  border-right: 1px solid #ddd;
+}
+.button-group li:first-child a {
+  -moz-border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+.button-group li:last-child {
+  border-right: none;
+}
+.button-group li:last-child a {
+  -moz-border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+}
+.button-group li .i {
+  margin-right: 0;
+}
+.button-group li a {
+  color: #383838;
+  padding: 3px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.button-group .active a {
+  background: #f25824;
+  color: #fff;
+}
 .listview {
   width: 100%;
 }
 .listview thead {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 2px solid #ddd;
 }
 .listview td,
 .listview th {
+  position: relative;
   text-align: left;
+  padding: 4px;
+  cursor: pointer;
 }
 .listview td:first-child,
 .listview th:first-child {
-  padding: 8px;
   width: 28px;
   text-align: center;
   vertical-align: middle;
+}
+.listview td input[type="checkbox"],
+.listview th input[type="checkbox"] {
+  margin-top: -2px;
+}
+.listview .number {
+  text-align: right;
+}
+.listview tfoot {
+  border-top: 2px solid #ddd;
+}
+.listview tfoot td {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 8px 4px;
+}
+.listview .caret {
+  margin: 9px 0 0 4px;
+}
+.actionbar {
+  margin: 0 0 4px;
+}
+.actionbar li {
+  list-style-type: none;
+  float: left;
+  margin-right: 8px;
+  line-height: 28px;
+}
+ul.tweets {
+  position: relative;
+}
+ul.tweets li:not(:first-child) {
+  margin: 0 0 8px 16px;
+}
+ul.tweets li:not(:first-child):before {
+  position: Absolute;
+  left: 0;
+  content: "";
+  font-family: "entypo" !important;
+  font-weight: 300 !important;
+}
+ul.tweets a {
+  color: #f25824;
+}
+ul.tweets a:hover {
+  color: #383838;
 }
 .banner {
   background: url("../img/banner.jpg") top center no-repeat;

@@ -34,12 +34,14 @@ ellipsis()
   overflow: hidden
 
 // Colours
-border-color = #E5E5E5
+border-color = #ddd
 dark-border = #383838
 text-color = #383838
 light-text= #e5e5e5
 orange = #F25824
 grey = #888
+light-grey = #e5e5e5
+
 light-background = #F7F7F7
 dark-background = #383838
 
@@ -62,7 +64,7 @@ dark-background = #383838
   display: inline-block
   text-decoration: inherit
   width: 1em
-  margin-right: 0.2em
+  margin-right: 0.3em
   text-align: center
   opacity: 0.8
   //Uncomment for 3D effect
@@ -100,8 +102,6 @@ h1, h2, h3, h4
 
 h1
   font-size: 24px
-  margin: 12px 0
-  padding-bottom: 8px
   font-weight: normal
 
 h2
@@ -149,7 +149,7 @@ a.button:link, a.button:visited, button, input[type='submit']
   color: #404040
   margin: 0
   padding: 4px 10px
-  font-size: 12px
+  font-size: 13px
   text-align: center
   vertical-gradient(#efefef, #d8d8d8)
   radius(3px)
@@ -157,6 +157,7 @@ a.button:link, a.button:visited, button, input[type='submit']
   text-shadow: 0 1px 1px rgba(255, 255, 255, .5)
   -webkit-font-smoothing: antialiased
   outline: none
+  line-height: normal
 
 a.button:hover, button:hover, input[type='submit']:hover
   vertical-gradient(#f6f6f6, #e3e3e3)
@@ -207,6 +208,12 @@ button.primary
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(155, 155, 155, 0.4) inset
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(155, 155, 155, 0.4) inset
 
+.avatar
+  width: 24px
+  height: 24px
+  radius 3px
+  margin: 0 4px
+
 .affix
   top: -16px
 
@@ -239,10 +246,6 @@ button.primary
   visibility: hidden
   font-size: 0
 
-ul.bullet-list
-  li
-
-
 // Grid
 
 
@@ -250,12 +253,13 @@ ul.bullet-list
 // Layout
 
 .topheader
-  box-shadow(0 1px 8px rgba(0, 0, 0, 0.2))
+  box-shadow(0 0 8px rgba(0, 0, 0, 0.2))
   border-bottom: 1px solid border-color
   .navbar
     margin: 4px 0 0 0
     .nav
       float: none
+      margin-right: 0
       > li
         float: right
         a
@@ -268,7 +272,9 @@ ul.bullet-list
           color: orange
           border-color: border-color
           background: light-background
-
+      .avatar
+        float: left
+        margin-top: -2px
 
 .contact
   margin: 0
@@ -315,6 +321,9 @@ section
 
 .nav-list
   margin: 12px 0
+  > li
+    > a
+      radius(3px)
 
 .pane
   border: 1px solid border-color
@@ -333,35 +342,29 @@ section
     a:hover
       background: light-background
 
-.searchbox
-  position: relative
-  width: 320px
-  margin-bottom: 16px
+.navbar-search
+  margin-top: 16px
+  .search-query
+    padding: 2px 22px 
+    radius(13px)
+    background: light-background
+    border-color: border-color
   .search-icon
     position: absolute
     color: grey
-    top: 11px
+    top: 3px
     left: 5px
     font-size: 16px
   .searchclear
     //display: none
     position: absolute
     right: -5px
-    top: -4px
+    top: -5px
     font-size: 27px
     color: #b6b6b6
     cursor: pointer
     &:hover
       color: grey
-  .search
-    width: 100%
-    padding: 2px 22px 
-    font-size: 13px
-    radius(13px)
-    &:focus
-      outline: none
-      border-color: focus-color
-      box-shadow(0 1px 2px focus-color inset)
 
 .sidebar
   width: 180px
@@ -431,17 +434,79 @@ section
     box-shadow 0 0 3px rgba(0, 0, 0, 0.3)
     radius(4px)
 
+.button-group
+  border: 1px solid border-color
+  radius(4px)
+  margin: 0
+  li
+    float: left
+    border-right: 1px solid border-color
+    &:first-child a
+      radius(4px 0 0 4px)
+    &:last-child
+      border-right: none
+      a
+        radius(0 4px 4px 0)
+    .i
+      margin-right: 0
+    a
+      color: text-color
+      padding: 3px 5px
+      font-size: 16px
+      font-weight: bold
+      text-align: center
+  .active a
+    background: orange
+    color: white
+
 .listview
   width: 100%
   thead
-    border-bottom: 1px solid border-color
+    border-bottom: 2px solid border-color
   td, th
+    position: relative
     text-align: left
+    padding: 4px
+    cursor: pointer
     &:first-child
-      padding: 8px
       width: 28px
       text-align: center
       vertical-align: middle
+    input[type="checkbox"]
+      margin-top: -2px
+  .number
+    text-align: right
+  tfoot
+    border-top: 2px solid border-color
+    td
+      font-weight: bold
+      font-size: 15px
+      padding: 8px 4px
+  .caret
+    margin: 9px 0 0 4px
+
+.actionbar
+  margin: 0 0 4px
+  li
+    list-style-type: none
+    float: left
+    margin-right: 8px
+    line-height: 28px
+
+ul.tweets
+  position: relative
+  li:not(:first-child)
+    margin: 0 0 8px 16px
+    &:before
+      position: Absolute
+      left: 0
+      content: ""
+      font-family: "entypo" !important
+      font-weight: 300 !important
+  a
+    color: orange
+    &:hover
+      color: text-color
 
 // Specific
 .banner

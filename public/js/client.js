@@ -7,7 +7,9 @@
         'scrollTop': $($(e.srcElement).attr("href")).offset().top
       }, 500);
     });
-    return $('.navbar .nav a').click(function(e) {});
+    return $('.listview tr').click(function(e) {
+      return window.location.href = "page";
+    });
   });
 
 }).call(this);
